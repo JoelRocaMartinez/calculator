@@ -15,16 +15,35 @@ function App() {
   const addNine = () => setCount(prevCount => prevCount + 9)
   const addZero = () => setCount(prevCount => prevCount + 0)
 
+  function sumNumbers (a,b) {
+    return a + b
+  }
 
+  function substractNumbers (a,b) {
+    return a - b
+  }
 
-  const decrementCount = () => {
-    setCount(prevCount => prevCount)
+  function multiplyNumbers (a,b) {
+    return a * b
+  }
+
+  function divideNumbers (a,b) {
+    return a / b
+  }
+
+  const reset = () => setCount(prevCount => prevCount = [])
+
+  function calculate () {
+
   }
 
 
   return (
     <div>
-      <span>{count}</span>
+      <span> { 
+              count.length === 0 ? 0 : count
+             }
+      </span>
       <button onClick={addOne}> 1 </button>
       <button onClick={addTwo}> 2 </button>
       <button onClick={addthree}> 3 </button>
@@ -35,6 +54,12 @@ function App() {
       <button onClick={addEight}> 8 </button>
       <button onClick={addNine}> 9 </button>
       <button onClick={addZero}> 0 </button>
+      <button onClick={sumNumbers}> + </button>
+      <button onClick={substractNumbers}> - </button>
+      <button onClick={multiplyNumbers}> * </button>
+      <button onClick={divideNumbers}> / </button>
+      <button onClick={calculate}> = </button>
+      <button onClick={reset}> C </button>
     </div>
   )
    
